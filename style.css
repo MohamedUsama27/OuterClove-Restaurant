@@ -1,0 +1,2189 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+
+html{
+ scroll-behavior: smooth;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+}
+
+.bg_video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+section nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    height: 75px;
+    background: rgba(255, 231, 211, 0.26);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+section nav .logo1 img{
+    width: 60px;
+    margin-right: -70px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+section nav .logo img{
+    width: 300px;
+    cursor: pointer;
+   margin-left: 20px;
+    margin-top: 11px;
+}
+
+
+
+section nav ul{
+    list-style: none;
+}
+
+section nav ul li{
+    display: inline-block;
+    margin: 0 15px;
+}
+
+section nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 17px ;
+    transition: 0.5s;
+}
+
+section nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: rgb(237,107,67);
+    display: block;
+    transition: 0.4s linear;
+}
+
+section nav ul li a:hover::after{
+    width: 100%;
+}
+
+section nav ul li a:hover{
+    color: rgb(237,107,67);
+}
+
+
+.cart span{
+    padding: 4px 8px;
+    border-radius: 50px;
+    background-color:rgb(232,96,56);
+    color:rgb(254, 237, 219);
+    font-size: 18px;
+}
+
+
+
+section nav ul .Loginbtn{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgb(237,107,67);
+    outline: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 1.1em;
+    color: rgb(237,107,67);
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .5s;
+}
+
+section nav ul .Loginbtn:hover{
+    background: rgb(237,107,67);
+    color: rgb(254, 237, 219);
+}
+
+.wrapper{
+    left: 35%;
+    top: 25%;
+    position: absolute;
+    justify-content: center;
+    width: 400px;
+    height: 470px;
+    background:rgba(204, 204, 204, 0.3);
+    border: 2px solid rgba(217, 217, 217, 0.932);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 30px rgba(0, 0, 0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    transform: scale(0);
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+}
+
+.active-popup{
+    transform: scale(1);
+}
+
+
+
+.wrapper h2{
+    font-size: 2em;
+    bottom: 40px;
+    margin-bottom: 50px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+
+
+.wrapper .loginformbox{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.active .loginformbox{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .regformbox{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.active .regformbox {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+
+
+
+.wrapper .xbtn{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background:transparent;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.inputbox{
+    position: relative;
+    width: 300px;
+    height: 50px;
+    border-bottom: 2px solid rgb(237,107,67);
+    margin: 30px 0;
+}
+.inputbox label{
+    position:absolute;
+    top: 50%;
+    left: 5px;      
+    font-size: 1em;
+    color: rgb(148, 52, 22);
+    transform: translateY(-50%);
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputbox input:focus~label,
+.inputbox input:valid~label{
+    top: -2px;
+ }
+
+.inputbox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-size: 1em;
+    color: rgb(148, 52, 22);
+    outline: none;
+}
+
+.icon {
+    right: 8px;
+    padding: 60px;
+    line-height: 57px;
+}
+
+.icon a{
+    position:absolute;
+    top: 15px;
+    right: 26px;
+    line-height: 57px;
+}
+
+.remember-forgot { 
+    font-size: .9em; 
+    color: rgb(148, 52, 22);
+    font-weight: 500; 
+    margin: -15px 0 39px ;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.remember-forgot label input{
+    accent-color: rgb(255, 77, 23);
+    margin-right: 3px; 
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: rgb(237,107,67);
+    border: none;
+    outline: none; 
+    border-radius: 6px;
+    cursor: pointer;
+    font-size:1em;
+    color: white;
+    font-weight: 500;
+}
+
+
+.login-reg{
+    font-size: .9em;
+    color: rgb(148, 52, 22);
+    text-align: center;
+    font-weight: 500;
+    margin: 10px 0 10px;
+}
+
+
+/*     Buton    */
+
+.btn1 {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 50px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn1 a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 10px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+.btn1:hover a {
+	letter-spacing: 3px;
+}
+.btn1 a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+	transform: skewX(45deg) translate(0);
+	transition: 0.5s;
+	filter: blur(0px);
+}
+.btn1:hover a::before {
+	transform: skewX(45deg) translate(200px);
+}
+.btn1::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: -5px;
+	width: 30px;
+	height: 10px;
+	background: rgb(255, 77, 23);
+    box-shadow: 0 0 5px rgb(255, 77, 23), 0 0 15px rgb(255, 77, 23), 0 0 30px rgb(255, 77, 23)
+    ,0 0 60px rgb(255, 77, 23);
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+.btn1:hover::before /* lghtup button */ {
+	bottom: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+
+.btn1::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	top: -5px;
+	width: 30px;
+	height: 10px;
+	background: rgb(255, 60, 0);
+    box-shadow: 0 0 5px rgb(255, 60, 0), 0 0 15px rgb(255, 60, 0), 0 0 30px rgb(255, 60, 0)
+    ,0 0 60px rgb(255, 60, 0);
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+.btn1:hover::after /* lightup button */ {
+	top: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+.btn1:nth-child(1)::before,
+.btn1:nth-child(1)::after {
+	background: #ff7d49;
+	box-shadow: 0 0 5px #ff7d49, 0 0 15px #ff7d49, 0 0 30px #ff7d49,
+		0 0 60px #ff7d49;
+}
+
+
+
+ /*            <<<<<<<<<<<<  .  Customer Login  .  >>>>>>>>>>           */
+
+
+.login-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    background-image: url(images/customerlogin.png);
+    background-size: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 0vh;
+}
+
+.login-container form{
+    padding: 40px;
+    width: 430px;
+    height: 550px;
+    background: transparent;
+    border: 2px solid rgba(217, 217, 217, 0.932);
+    border-radius: 20px;
+    backdrop-filter: blur(17px);
+    box-shadow: 0 0 30px rgba(0, 0, 0,.5);
+    justify-content: center;
+    text-align: center;
+}
+
+.login-container form h3{
+    font-size: 35px;
+    margin-bottom: 50px;
+    filter: drop-shadow(0px 0px 10px #ffffff);
+    color:rgb(232,96,56); 
+}
+
+.login-container  form input,
+.login-container  form select{
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    font-size: 17px;
+    margin: 8px 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.192);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-container form .form-btn{
+    background: rgb(254, 211, 197); 
+    color:rgb(254, 59, 0);
+    margin-top: 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login-container form .form-btn:hover{
+    background: rgb(232,96,56); 
+    color:rgb(254, 211, 197);
+}
+
+.login-container form p{
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgb(115, 32, 6);
+}
+.login-container form p a{
+    margin-top: 10px;
+    font-size: 16px;
+    filter: drop-shadow(0px 0px 7px #ffffff);
+    color: rgb(255, 60, 0); 
+}
+
+.login-container form .error_msg{
+    margin: 10px 0;
+    display: block;
+    color: rgb(0, 0, 0); 
+    filter: drop-shadow(0px 0px 10px #ffffff);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+
+ 
+ /*            <<<<<<<<<<<<  .  Home  .  >>>>>>>>>>           */
+
+#Home .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 80px;
+}
+
+section .main .men_text h1{
+    font-size: 60px;
+    position: relative;
+    color: white;
+    text-shadow: rgb(87, 87, 87) 3px 0px 10px, rgb(0, 0, 0) -3px -3px 0px;
+    top: -100px;
+    left: 20px;
+}
+
+@font-face{
+    font-family: myfont;
+    src:url(mvboli.ttf);
+}
+
+section .main .men_text h1 span{
+    margin-left: 15px;
+    color: rgb(232,96,56);
+    text-shadow: rgba(232, 97, 56, 0.85) -3px -3px 20px;
+    font-family: myfont;
+    line-height: 22px;
+    font-size: 80px;
+}
+
+section .main .main_image img{
+    width: 720px;
+    filter: drop-shadow(5px 5px 30px rgba(255, 102, 0, 0.522));
+    position: relative;
+    left: 45px;
+    transition: 0.3s;
+}
+
+section .main .main_image img:hover{
+    width: 733px;
+    transition: 0.3s;
+}
+
+
+section p{
+    width: 650px;
+    text-align: justify;
+    position: relative;
+    left: 100px;
+    color: white;
+    bottom: 255px;
+    line-height: 28px;
+}
+
+#Home .order_btn{
+    background: rgb(237,107,67);
+    position: relative;
+    left: 100px;
+    bottom: 230px;
+    border-radius: 10px;
+    width: 150px;
+    cursor: pointer;
+    padding: 15px 25px;
+}
+
+section .order_btn a{
+    color: rgb(255, 255, 255);
+    margin-right: 5px;
+    text-decoration: none;
+     
+}
+
+ /*            <<<<<<<<<<<<  .  About  .  >>>>>>>>>>           */
+
+
+.about{
+    width: 100%;
+    height:  100vh;
+    padding: 70px 0;
+}
+
+.about .about_main{
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about .about_main .image img{
+    width: 750px;
+    position: relative;
+    top: 1px;
+}
+
+.about .about_main .about_text h1 span{
+    color: rgb(232,96,56);
+    margin-right: 15px;
+    font-size: 70;
+    font-family: myfont;
+}
+
+.about .about_main .about_text h1{
+    font-size: 55px;
+    position: relative;
+    bottom: 50px; 
+}
+
+.about .about_main .about_text h3{
+    font-size: 30px;
+    margin: 0 0 50px;
+}
+
+.about .about_main .about_text p{
+    width: 650px;
+    text-align: justify;
+    margin-right: 30px;
+    line-height: 22px;
+}
+
+.about .about_btn{
+    background: rgb(237,107,67);
+    position: relative;
+    left: 55%;
+    border-radius: 10px;
+    bottom: 170px;
+    width: 150px;
+    cursor: pointer;
+    padding: 15px 25px;
+}
+
+.about .about_btn a{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 5px;
+    text-decoration: none;
+}
+
+
+
+
+ /*            <<<<<<<<<<<<  .  Promotion  .  >>>>>>>>>>           */
+
+.promo{
+    width: 100%;
+     padding: 70px 0;
+}
+
+.promo h1 {
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.promo h1 span {
+    color: rgb(232,96,56);
+    margin-left: 15px;
+    font-family: myfont; 
+}
+
+.promo h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(232,96,56);
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+.promo .promo_box{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px; 
+}
+
+.promo .promo_box .promo_card{
+    width: 480px;
+    height: 480px;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 40px rgba(232, 97, 56, 0.693);
+} 
+
+.promo .promo_box .promo_card .promoimg{
+    width: 460px;
+    height: 460px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.promo .promo_box .promo_card .promoimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    object-position: center;
+   
+}
+
+
+
+.promo .promo_box .promo_btn a{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background: rgb(232,96,56);
+    padding: 8px 10px;
+    width: 140px;
+    box-shadow: 40px white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 45px 180px;
+}
+
+
+
+ /*            <<<<<<<<<<<<  . Main Menu  .  >>>>>>>>>>           */
+
+.menu{
+    width: 100%;
+     padding: 70px 0;
+}
+
+.menu h1 {
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.menu h1 span {
+    color: rgb(232,96,56);
+    margin-left: 15px;
+    font-family: myfont; 
+}
+
+.menu h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(232,96,56);
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+
+.menu .menu_box{
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px; 
+}
+
+.menu .menu_box .menu_card{
+    width: 325px;
+    height: 480px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.207);
+} 
+
+.menu .menu_box .menu_card .menu_image1{
+    width: 300px;
+    height: 245px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.menu .menu_box .menu_card .menu_image1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+}
+
+.menu .menu_box .menu_card .menu_image1:hover img{
+    transform: scale(1.3);
+}
+
+.menu .menu_box .menu_card .menu_info h2{
+    width: 60%;
+    text-align: center;
+    margin: 10px auto 10px auto;
+    font-size: 25px;
+    color: rgb(232,96,56);
+}
+
+.menu .menu_box .menu_card .menu_info p{
+    text-align: center;
+    margin-top: 8px;
+    line-height: 21px;
+}
+
+.menu .menu_box .menu_card .menu_info h3{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.menu .menu_box .menu_card .menu_info .menu_btn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background: #000;
+    padding: 8px 10px;
+    margin: 0 80px;
+    
+}
+
+
+ /*            <<<<<<<<<<<<  .  Facilities  .  >>>>>>>>>>           */
+
+.facilities{
+    background-image: url(images/facility_bgimg.jpg);
+    background-size: 100%;
+     margin: 0;
+     padding: 83px; 
+     height: 100vh;
+     display: flex;
+     align-items: center;
+}
+
+.facilities .facilities_text h2{
+    font-size: 60px;
+    color: white;
+    position: relative;
+    top: -50px;
+    left: -56px;
+}
+
+
+
+.facilities_text h2 span{
+    margin-left: 15px;
+    color: rgb(232,96,56);
+    font-family: myfont;
+    line-height: 22px;
+    font-size: 70px;
+}
+
+.facilities .facilities_text li{
+    font-size: 30px;
+    position: relative;
+    top: -30px;
+    left: 40px;
+    margin-bottom: 50px;
+    color: rgb(232,96,56);
+    list-style: none;
+    letter-spacing: 2.5px;
+    font-style: normal; 
+}
+
+.facilities .facilities_text li:not(:last-child){
+    margin-bottom: 15px;
+}    
+
+
+
+.reservation-btn{
+    width: 400px;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(237,107,67);
+    font-weight: 500;
+    margin: 50px;
+    text-align: center;
+    transition: .5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	padding: 18px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+	backdrop-filter: blur(15px);
+}
+    
+.reservation-btn:hover{
+    background: rgb(232,96,56);
+    color: rgb(254, 237, 219);
+}
+
+.facilities .slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+    height: 500px;
+}
+
+.navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.manual-btn{
+    border: 2px solid rgb(232,96,56);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: rgb(232,96,56);
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;    
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;    
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;    
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;    
+}
+
+#radio5:checked ~ .first{
+    margin-left: -80%;    
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.navigation-auto div{
+    border: 2px solid rgb(232,96,56);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .autobtn1{
+    background: rgb(232,96,56);
+}
+
+#radio2:checked ~ .navigation-auto .autobtn2{
+    background: rgb(232,96,56);
+}
+
+#radio3:checked ~ .navigation-auto .autobtn3{
+    background: rgb(232,96,56);
+}
+
+#radio4:checked ~ .navigation-auto .autobtn4{
+    background: rgb(232,96,56);
+}
+
+#radio5:checked ~ .navigation-auto .autobtn5{
+    background: rgb(232,96,56);
+}
+
+
+
+
+ /*            <<<<<<<<<<<<  .  Review  .  >>>>>>>>>>           */
+
+.review{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+
+.review h1{
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review h1 span{
+    margin-left: 15px;
+    color: rgb(232,96,56);
+    font-family: mv boli;
+}
+
+.review h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(232,96,56);
+    position: relative;
+    bottom: 15px;
+    display: block;
+}
+
+.review .review_box{
+    width: 95%;
+    margin: 70px auto;
+    display: flex;
+}
+
+.review .review_box .review_card{
+    width: 350px;
+    height: 535px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.523);
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin:  8px;
+}
+
+.review .review_box .review_card .review_profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_profile{
+    transform: translateY(-60px);
+}
+
+.review .review_box .review_card .review_profile img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 147, 114);
+}
+
+.review .review_box .review_card .review_text{
+    text-align: center;
+}
+
+.review .review_box .review_card .review_text .name{
+    color: black;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text .name{
+    transform: translateY(-50px);
+}
+
+
+
+.review .review_box .review_card .review_text p{
+    text-align: center;
+    line-height: 22px;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text p{
+    margin-top: 5px;
+}
+
+
+ /*            <<<<<<<<<<<<  .  Team  .  >>>>>>>>>>           */
+
+.team{
+    width: 100%;
+    height: 90vh;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+
+.team h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.team h1 span{
+    color: rgb(232,96,56);
+    margin-left: 15px;
+    font-family: mv boli;
+}
+
+.team h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(232,96,56);
+    display: block;
+    position: relative;
+    bottom: 15px;
+}
+
+.team .team_box{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 13%;
+}
+
+.team .team_box .profile{  /* box */
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    box-shadow: 0 0 8px rgba(247, 197, 144, 0.754);
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover{
+    border-radius: 20px;
+    height: 320px;
+}
+
+.team .team_box .profile img{  /* round */
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgb(255, 217, 177);
+    z-index: 2;
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover img{
+    border-radius: 20px;
+    margin-top: -230px;
+}
+
+.team .team_box .profile .info{
+    position: absolute;
+    text-align: center;
+    top: 25%;
+    transition: 0.4s;
+}
+
+.team .team_box .profile:hover .info{
+    top: 60%;
+}
+
+.team .team_box .profile .info .name{
+    color: rgb(232,96,56);
+    margin-bottom: 15px;
+}
+
+.team .team_box .profile .info .bio{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto 10px auto;
+}
+
+
+
+
+ /*            <<<<<<<<<<<<  .  Footer  .  >>>>>>>>>>           */
+
+footer{
+    width: 100%;
+    height: fit-content;
+    padding: 30px 0 0 20px;
+    background: rgb(254, 237, 219);
+}
+
+footer .footer_main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer .footer_main .footer_tag{
+    text-align: center;
+}
+
+footer .footer_main .footer_tag h2{
+    color: #000;
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+
+
+footer .end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+footer .end span{
+    color: rgb(232,96,56);
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(232,96,56);
+    border-radius: 15px;
+}
+
+
+ /*            <<<<<<<<<<<<  .  Admin/Staff Reg Form  .  >>>>>>>>>>           */
+
+
+.form-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    background-image: url(images/adminbg.jpg);
+    height: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0vh;
+}
+
+.form-container form{
+    padding: 40px;
+    width: 430px;
+    height: 550px;
+    background: transparent;
+    border-radius: 20px;
+    backdrop-filter: blur(17px);
+    box-shadow: 0 0 30px rgba(0, 0, 0,.5);
+    justify-content: center;
+    text-align: center;
+}
+
+.form-container form h3{
+    font-size: 35px;
+    margin-bottom: 20px;
+    color:rgb(255, 255, 255); 
+}
+
+.form-container  form input,
+.form-container  form select{
+    color: white;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    font-size: 17px;
+    margin: 8px 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.192);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-container form .form-btn{
+    background: rgb(254, 211, 197); 
+    color:rgb(254, 59, 0);
+    margin-top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-container form .form-btn:hover{
+    background: rgb(232,96,56); 
+    color:rgb(254, 211, 197);
+}
+
+.form-container form p{
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+.form-container form p a{
+    margin-top: 10px;
+    font-size: 16px;
+    color: rgb(194, 194, 194); 
+}
+
+.form-container form .error_msg{
+    margin: 10px 0;
+    display: block;
+    color: rgb(255, 255, 255); 
+    filter: drop-shadow(0px 0px 10px #ffffff);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+ /*            <<<<<<<<<<<<  .  Admin Page  .  >>>>>>>>>>           */
+
+.header{
+    background-color: rgb(254, 237, 219);
+    position: sticky;
+    top: 0; left: 0;
+    z-index: 1000;
+}
+
+.header .flex{
+    display: flex;
+    align-items: center;
+    padding: 25px 60px;
+    max-width: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin: 0 auto; 
+}
+
+.header .flex .logo{
+    margin-right: auto;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(67, 34, 25);
+}
+
+
+.header .flex .navbar a{
+    margin-left: 10px;
+    font-size: 20px;
+    color: rgb(55, 33, 16);
+}
+
+.header .flex .navbar a:hover{
+    color: rgb(232,96,56);
+}
+
+.header .flex .cart{
+    margin-left: 20px;
+    font-size: 20px;
+    color: rgb(55, 33, 16);
+}
+
+.header .flex .cart:hover{
+    color: rgb(232,96,56);
+}
+
+.header .flex .cart span{
+    padding: 7px 10px;
+    border-radius: 3px;
+    background-color:rgb(232,96,56);
+    color:rgb(254, 237, 219);
+    font-size: 20px;
+}
+
+.container{
+     max-width: 1200px;
+     margin: 0, auto;
+}
+
+.section{
+    padding: 20px;
+}
+
+.container h1{
+    padding: 50px;
+    font-size: 40px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.container h1 span{
+    color: rgb(232,96,56);
+    border-radius: 7px;
+    font-family: myfont;
+    font-size: 50px;
+}
+
+.add-product-form{
+    width: 450px;
+    position: relative;
+    background: transparent;
+    padding: 60px;
+    margin: 0px 53px;
+    border: 2px solid rgba(158, 158, 158, 0.932);
+    border-radius: 20px;
+    backdrop-filter: blur(17px);
+    box-shadow: 0 0 10px rgba(0, 0, 0,.5);
+    text-align: center;
+}
+
+.add-product-form h3{
+    font-size: 30px;
+    margin-bottom: 25px;
+    margin-top: -15px;
+    color: rgb(232,96,56);
+    text-align: center;
+}
+
+.add-product-form .box{
+    text-transform: none;
+    padding: 10px 10px;
+    font-size: 15px;
+    color: black;
+    border-radius: 5px;
+    background-color: white;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.add-btn{
+    background: rgb(254, 211, 197);
+    width: 200px; 
+    height: 48px;
+    justify-content: center;
+    border-radius: 10px;
+    color:rgb(254, 59, 0);
+    margin-top: 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-btn{
+    background: rgb(252, 190, 190);
+    border-radius: 10px;
+    padding: 16px;
+    color:rgb(232,96,56);
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.add-btn:hover,
+.delete-btn:hover{
+    background-color: rgb(232,96,56);
+    color: white;   
+}
+
+.delete-btn i{
+    padding-right: 7px;
+}
+
+.message{
+    background-color: rgb(234, 142, 106);
+    position: absolute;
+    top: 85px; left: 550px;
+    z-index: 10000;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 0 auto;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.message span{
+    font-size: 20px;
+    color: black;
+}
+
+.message i{
+    cursor: pointer;
+}
+
+ /*            <<<<<<<<<<<<  .  Menu Table  .  >>>>>>>>>>           */
+
+.display-menu-table table{
+    width: 70%;
+    margin-left: 540px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: -783px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,.5);
+}
+
+.display-menu-table table thead th{
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color:  rgb(234, 142, 106);
+    color: white;
+}
+
+.display-menu-table table td{
+    padding: 0px;
+    box-shadow: 0 0 5px rgba(157, 157, 157, 0.359);
+    font-size: 20px;
+    color: black;
+}
+
+
+/* feedback table */
+
+.container h2{
+    font-size: 40px;
+    margin-top: 700px;
+    margin-left: 620px;
+}
+
+.display-feedback-table table{
+    width: 70%;
+    margin-left: 330px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,.5);
+}
+
+.display-feedback-table table thead th{
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,.5);
+    font-size: 17px;
+    background-color:  rgb(111, 67, 46);
+    color: white;
+}
+
+.display-feedback-table table td{
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(157, 157, 157, 0.359);
+    font-size: 14px;
+    color: black;
+}
+
+.display-feebback-table .Empty{
+    top: -600px;
+    margin-left: 21%;
+    text-align: center;
+    background-color: rgb(254, 211, 197); 
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+ /*            <<<<<<<<<<<<  .  Menu  .  >>>>>>>>>>           */
+
+
+.display-product-table .Empty{
+    top: -600px;
+    margin-left: 21%;
+    text-align: center;
+    background-color: rgb(254, 211, 197); 
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+.container .products .menu h1{
+    font-size: 50px;
+    font-family: sans-serif;
+    margin-top: -30px;
+    margin-right: -10%;
+}
+
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 380px);
+    gap:10px;
+    margin-left: 130px;
+    margin-right: -100px;
+    margin-top: -100px; 
+    justify-content: center;
+ }
+
+ .products .box-container .box{
+    text-align: center;
+    padding:20px;
+    overflow: hidden;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.441);
+    border:2px;
+    border-radius: 5px;
+ }
+
+ .products .box-container .box img{
+    height: 250px;
+    border-radius: 2px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+ }
+ 
+ .products .box-container .box h3{
+    margin:10px 0;
+    font-size: 25px;
+    color:black
+ }
+
+ .products .box-container .box .price{
+    font-size: 25px;
+    padding: 10px;
+    color:black;
+ }
+
+
+ /*            <<<<<<<<<<<<  .  Reservation  .  >>>>>>>>>>           */
+
+.display-reservation-table h2{
+    font-size: 40px;
+    margin-top: -200px;
+    margin-left: 540px;
+}
+
+.display-reservation-table table{
+    width: 119%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 43px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,.5);
+}
+
+.display-reservation-table table thead th{
+    box-shadow: 0 0 5px rgba(231, 106, 11, 0.585);
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    background-color:  rgb(234, 142, 106);
+    color: white;
+}
+
+.display-reservation-table table td{
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(157, 157, 157, 0.359);
+    font-size: 20px;
+    color: black;
+}
+.display-reservation-table .Empty{
+    top: -600px;
+    margin-left: 21%;
+    text-align: center;
+    background-color: rgb(254, 211, 197); 
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.display-reservation-table .Empty{
+    top: -600px;
+    margin-left: 21%;
+    text-align: center;
+    background-color: rgb(254, 211, 197); 
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+ /*            <<<<<<<<<<<<  .  Order Table  .  >>>>>>>>>>           */
+
+.display-orders-table h2{
+    font-size: 40px;
+    margin-top: -200px;
+    margin-left: 540px;
+}
+
+.display-orders-table table{
+    width: 119%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 43px;
+    box-shadow: 0 0 10px rgba(0, 0, 0,.5);
+}
+
+.display-orders-table table thead th{
+    box-shadow: 0 0 5px rgba(231, 106, 11, 0.585);
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 17px;
+    background-color:  rgb(234, 142, 106);
+    color: white;
+}
+
+.display-orders-table table td{
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(157, 157, 157, 0.359);
+    font-size: 14px;
+    color: black;
+}
+.display-orders-table .Empty{
+    top: -600px;
+    margin-left: 21%;
+    text-align: center;
+    background-color: rgb(254, 211, 197); 
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.display-orders-table .Empty{
+    top: -600px;
+    margin-left: 21%;
+    text-align: center;
+    background-color: rgb(254, 211, 197); 
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+
+
+
+ /*            <<<<<<<<<<<<  .  Cart  .  >>>>>>>>>>           */
+
+.food-cart table{
+    text-align: center;
+    margin-left: 10%;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid rgba(217, 217, 217, 0.932);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.441);
+ }
+
+ .food-cart .heading{
+    margin-top: -20px;
+    font-size: 45px;
+    font-family: sans-serif;
+ }
+
+ .food-cart .heading span{
+    font-family: myfont;
+    font-size: 55px;
+ }
+
+
+ .food-cart table thead th{
+    padding:15px;
+    font-size: 19px;
+    color:white;
+    border-radius: 5px;
+    background-color:rgb(232,96,56);
+ }
+
+ .food-cart table tr td{
+    border-bottom:10px;
+    padding:15px;
+    font-size: 17px;
+    color:black;
+ }
+
+ .food-cart table input[type="number"]{
+    border: none;
+    padding:10px 30px;
+    font-size: 17px;
+    color:black;
+    width: 100px;
+ }
+ 
+ .food-cart table input[type="submit"]{
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: rgb(234, 142, 106);
+    color:white;
+ }
+
+ .food-cart table input[type="submit"]:hover{
+    background-color: rgb(232,96,56);
+ }
+ 
+ .food-cart table .table-bottom{
+    background-color: rgb(249, 214, 200);
+ }
+
+
+ .shop-btn{
+    background-color: white;
+    outline: none;
+    padding: 17px;
+    border: 2px solid rgb(237,107,67);
+    outline: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 17px;
+    color: rgb(237,107,67);
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .5s;
+}
+
+.shop-btn:hover{
+    background: rgb(237,107,67);
+    color: rgb(254, 237, 219);
+}
+
+
+.food-cart .checkout-btn{
+    background-color: rgb(101, 171, 104);
+    padding: 17px;
+    width: 300px;
+    margin-left: 45%;
+    margin-top: 14px;
+    text-align: center;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: .5s;
+ }
+
+ .food-cart .checkout-btn:hover{
+    background: rgb(62, 157, 67);
+    color: rgb(254, 237, 219);
+}
+ 
+ .food-cart .checkout-btn a{
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    width: auto;
+ }
+ 
+ .food-cart .checkout-btn a.disabled{
+    pointer-events: none;
+    opacity: .5;
+    user-select: none;
+    background-color: rgb(73, 154, 77);
+ }
+
+
+ /*            <<<<<<<<<<<<  .  Checkout Form  .  >>>>>>>>>>           */
+
+ .checkout-form form{
+    margin-left: 36%;
+    border-radius: 20px;
+    background: rgb(255, 241, 233);
+    border: 2px solid rgba(217, 217, 217, 0.932);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    padding: 40px;
+    width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.441);
+ }
+ 
+ .checkout-form form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+ }
+
+ .checkout-form h1{
+    text-align: center;
+    margin-left: 180px;
+    font-family: sans-serif;
+    font-size: 45;
+ }
+
+ .checkout-form h1 span{
+    color: rgb(232,96,56);
+    font-size: 55;
+    font-family: myfont;
+ }
+
+ 
+
+ .checkout-form form .flex .inputBox{
+    flex:1 1 200px;
+ }
+ 
+ .checkout-form form .flex .inputBox span{
+    font-size: 13px;
+    color:black;
+ }
+ 
+ .checkout-form form .flex .inputBox input,
+ .checkout-form form .flex .inputBox select{
+    width: 100%;
+    background-color: white;
+    font-size: 15px;
+    color:black;
+    border-radius: 5px;
+    margin:10px 0;
+    padding:12px 14px;
+    text-transform: none;
+    border:10px;
+ }
+
+ .display-order{
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.379);
+    border-radius: 8px;
+    text-align: center;
+    padding:15px;
+    font-size: 10px;
+    margin:0 auto;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.441);
+    border:var(--border);
+ }
+ 
+ .display-order span{
+    display: inline-block;
+    border-radius: 7px;
+    background-color: rgba(252, 211, 183, 0.379);
+    padding:5px 15px;
+    font-size: 20px;
+    color:black;
+    margin: 5px;
+ }
+ 
+ .display-order span.grand-total{
+    width: 100%;
+    background-color:rgb(254, 211, 197);
+    color:rgb(255, 60, 0);
+    padding:10px;
+    margin-top: 10px;
+ }
+
+
+ /*            <<<<<<<<<<<<  .  Order Confomation Popup  .  >>>>>>>>>>           */
+
+
+ .order-message-container{
+    position: fixed;
+    top:0; left:0;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    background-color:rgba(48, 48, 48, 0.253);
+    width: 100%;
+ }
+ 
+ 
+ .order-message-container .message-container{
+    width: 35%;
+    background-color: white;
+    border: 2px solid rgba(217, 217, 217, 0.932);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0,.5);
+    border-radius: 10px;
+    padding:20px;
+    text-align: center;
+ }
+ 
+ .order-message-container .message-container h3{
+    font-size: 25px;
+    padding-bottom: 20px;
+    color:black
+ }
+ 
+ .order-message-container .message-container .order-detail{
+    background-color: rgb(229, 229, 229);
+    border-radius: 5px;
+    padding:10px;
+    margin:10px 0;
+ }
+ 
+ .order-message-container .message-container .order-detail span{
+    background-color: white;
+    border-radius: 5px;
+    color:black;
+    font-size: 20px;
+    display: inline-block;
+    padding:10px 15px;
+    margin:10px;
+ }
+ 
+ .order-message-container .message-container .order-detail span.total{
+    display: block;
+    background: rgb(232,96,56);
+    color:white;
+ }
+ 
+ .order-message-container .message-container .customer-details{
+    margin:15px 0;
+    text-align:left;
+    padding-left: 60px;
+    
+ }
+ 
+ .order-message-container .message-container .customer-details p{
+    padding:10px 0;
+    font-size: 20px;
+    color:rgb(63, 63, 63)
+ }
+
+ .order-message-container .message-container .customer-details h4{
+    padding:10px;
+    font-size: 10px;
+    padding-left: 34px;
+    padding-bottom: 40px;
+ }
+
+ 
+ 
+ .order-message-container .message-container .customer-details p span{
+    color:rgb(101, 171, 104);
+    padding:0 5px;
+    text-transform: none;
+ }
+
+
+ /*            <<<<<<<<<<<<  .  Feedback  .  >>>>>>>>>>           */
+
+
+
+section .container .add-feedback-form{
+    margin-left: 10%;
+    margin-top: 9%;
+    padding: 30px;
+    width: 35%;;
+ }
+ 
+ section .container .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+ }
+
+section .container .add-feedback-form .feedback h2{
+    text-align: center;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: -10px;
+    font-family: sans-serif;
+    font-size: 45px;
+ }
+
+ section .container .flex .Box{
+    flex:1 1 200px;
+ }
+ 
+ section .container .flex .Box span{
+    font-size: 20px;
+    color:black;
+ }
+ 
+ section .container .flex .Box input,
+ section .container .flex .Box select{
+    width: 100%;
+    background-color: rgb(253, 234, 221);
+    font-size: 15px;
+    color:black;
+    border-radius: 5px;
+    margin:10px 0;
+    padding:12px 14px;
+    text-transform: none;
+    border:10px;
+ }
+ 
+
+ .send-btn{
+    background: rgb(254, 211, 197);
+    width: 200px; 
+    height: 48px;
+    justify-content: center;
+    border-radius: 10px;
+    color:rgb(254, 59, 0);
+    margin-top: 40px;
+    margin-left: 70px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.send-btn:hover{
+    background: rgb(237,107,67);
+    color: rgb(232, 254, 219);
+}
+
+
+
+ /*            <<<<<<<<<<<<  .  Reservation  .  >>>>>>>>>>           */
+
+
+.reservation form{
+    margin-left: 13%;
+    border-radius: 20px;
+    background: rgb(255, 241, 233);
+    backdrop-filter: blur(20px);
+    margin-top: 7%;
+    padding: 40px;
+    width: 75%;
+ }
+ 
+ .reservation form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+ }
+ 
+ .reservation form h3{
+    background-color:rgb(253, 224, 207);
+    color: rgb(237,107,67);
+    font-size: 35px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 12px;
+    text-align: center;
+   
+ }
+ 
+ .reservation form .flex .box{
+    flex: 1 1 400px;
+ }
+ 
+ .reservation form .flex .box .p1{
+    font-size: 18px;
+    color: black;
+ }
+ .reservation form .flex .box span{
+    color: red;
+ }
+ 
+ .reservation form .flex .box .input{
+    padding: 10px 0;
+    margin: 10px 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgb(255, 241, 233);
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    width: 100%;
+ }
+ 
+ .reservation form .flex .box .input::placeholder{
+    color: rgba(0, 0, 0, 0.6);
+ }
+ 
+ .reservation form .flex .box input[type="time"]::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+ }
+
+ .reservation form .bookbtn{
+    width: 630px;
+    height: 50px;
+    margin-top: 20px;
+    background: transparent;
+    border: 2px solid rgb(237,107,67);
+    outline: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(237,107,67);
+    font-weight: 500;
+    margin-left: 180px;
+    transition: .5s;
+}
+
+.reservation form .bookbtn:hover{
+    background: rgb(237,107,67);
+    color: rgb(254, 237, 219);
+}
