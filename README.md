@@ -1,6 +1,6 @@
 Here are some picures of the web application:
 
-![Image-01](https://github.com/MohamedUsama27/OuterClove-Restaurant/assets/170197514/126cce5b-4dac-4a3c-8624-f1343151e0f4)
-![Image-02](https://github.com/MohamedUsama27/OuterClove-Restaurant/assets/170197514/a8c2ea37-c8f7-480c-aa02-6807160e25ef)
-![Image-03](https://github.com/MohamedUsama27/OuterClove-Restaurant/assets/170197514/fc4a7fde-42de-4ff8-9d4d-2d0b38323040)
-![Image-04](https://github.com/MohamedUsama27/OuterClove-Restaurant/assets/170197514/4bd263d5-1cd1-4aef-9a2b-3c684d5ebc3d)
+![image-1](https://github.com/MohamedUsama27/OuterClove-Restaurant/assets/170197514/71de0414-42c0-4a42-ae06-ae1738f3d5aa)
+![image-2](https://github.com/MohamedUsama27/OuterClove-Restaurant/assets/170197514/818b9c1b-454b-4465-b132-0e6de3bd1eee)
+![image-3](https://github.com/MohamedUsama27/OuterClove-Restaurant/assets/170197514/5e23d187-7d37-4ccc-8605-745309fcd8b0)
+![image-4](https://github.com/MohamedUsama27/OuterClove-Restaurant/assets/170197514/6419e4f7-877e-48dc-94ee-b2b9839d7d25)
